@@ -1,0 +1,72 @@
+﻿@model WebApplication_crud.Models.Customer
+
+@{
+    ViewBag.Title = "ShowAllCustomerDetails";
+}
+
+@*<h2>ShowAllCustomerDetails</h2>*@
+
+<!Doctype html>
+<html>
+    <head>
+        <meta  name="viewport" content="width=device-width"/>
+        <title>ShowAllCustomerDetails</title>
+    </head>
+
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobileno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailID)
+            </th>
+            <th></th>
+
+        </tr>
+
+        @foreach (var item in Model.ShowallCustomer)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobileno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailID)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
+            </td>
+         </tr>
+        }
+</table>
+
+</body>
+</html>
+

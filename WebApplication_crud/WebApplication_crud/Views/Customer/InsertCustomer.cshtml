@@ -1,0 +1,90 @@
+﻿@model WebApplication_crud.Models.Customer
+
+@{
+    ViewBag.Title = "InsertCustomer";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+     <title>InsertCustomer</title>
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+  @using (Html.BeginForm())
+  {
+        @Html.ValidationSummary(true)
+    <fieldset>
+
+        <legend>Customer</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mobileno)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mobileno)
+            @Html.ValidationMessageFor(model => model.Mobileno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Birthdate)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Birthdate)
+            @Html.ValidationMessageFor(model => model.Birthdate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmailID)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmailID)
+            @Html.ValidationMessageFor(model => model.EmailID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+
+     </fieldset>
+  }
+    <div>
+        @Html.ActionLink("Back to List", "ShowAllCustomerDetails")
+
+    </div>
+</body>
+</html>
+
